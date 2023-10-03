@@ -4414,10 +4414,10 @@
     {
       "id": "LAYOUT_POKE_PUZZLE_HUB",
       "name": "PokePuzzleHub_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "width": 33,
+      "height": 15,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleFactory",
       "border_filepath": "data/layouts/PokePuzzleHub/border.bin",
       "blockdata_filepath": "data/layouts/PokePuzzleHub/map.bin"
     }
