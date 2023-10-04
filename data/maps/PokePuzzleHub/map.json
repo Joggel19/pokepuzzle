@@ -6,7 +6,7 @@
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_TOWN",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -18,11 +18,25 @@
   ],
   "warp_events": [
     {
-      "x": 2,
-      "y": 3,
+      "x": 24,
+      "y": 14,
       "elevation": 0,
-      "dest_map": "MAP_RUSTBORO_CITY",
+      "dest_map": "MAP_POKE_PUZZLE_EXIT",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_POKE_PUZZLE_EXIT",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 26,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_POKE_PUZZLE_EXIT",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [

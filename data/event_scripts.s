@@ -1061,3 +1061,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/PokePuzzleHub/scripts.inc"
+
+	.include "data/maps/World_1_1/scripts.inc"
+
+	.include "data/maps/PokePuzzleExit/scripts.inc"

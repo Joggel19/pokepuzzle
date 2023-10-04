@@ -37,7 +37,9 @@
     "gMapGroup_IndoorRoute124"
   ],
   "gMapGroup_Puzzles": [
-    "PokePuzzleHub"
+    "PokePuzzleHub",
+    "World_1_1",
+    "PokePuzzleExit"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
