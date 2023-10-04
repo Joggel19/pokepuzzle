@@ -4440,6 +4440,16 @@
       "secondary_tileset": "gTileset_BattleFactory",
       "border_filepath": "data/layouts/PokePuzzleExit/border.bin",
       "blockdata_filepath": "data/layouts/PokePuzzleExit/map.bin"
+    },
+    {
+      "id": "LAYOUT_WORLD1_LOBBY",
+      "name": "World1_Lobby_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattleFactory",
+      "border_filepath": "data/layouts/World1_Lobby/border.bin",
+      "blockdata_filepath": "data/layouts/World1_Lobby/map.bin"
     }
   ]
 }
