@@ -4205,3 +4205,10 @@ u8 Script_TryGainNewFanFromCounter(void)
 {
     return TryGainNewFanFromCounter(gSpecialVar_0x8004);
 }
+
+void RestartPuzzle(void)
+{
+    SetWarpDestinationToMapWarp(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, 0);
+    DoWarp();
+    ResetInitialPlayerAvatarState();
+}

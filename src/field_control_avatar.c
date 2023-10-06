@@ -32,6 +32,7 @@
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
 #include "constants/field_poison.h"
+#include "constants/maps.h"
 #include "constants/map_types.h"
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
@@ -70,6 +71,7 @@ static bool8 TryStartStepCountScript(u16);
 static void UpdateFriendshipStepCounter(void);
 static bool8 UpdatePoisonStepCounter(void);
 static bool8 ReturnToHub(void);
+static bool8 RestartPuzzle(void);
 
 void FieldClearPlayerInput(struct FieldInput *input)
 {
@@ -205,6 +207,9 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         return TRUE;
 
     if (input->pressedLButton && ReturnToHub())
+        return TRUE;
+    
+    if (input->pressedRButton && RestartPuzzle())
         return TRUE;
 
 #if DEBUG_OVERWORLD_MENU == TRUE && DEBUG_OVERWORLD_IN_MENU == FALSE
@@ -1041,8 +1046,35 @@ int SetCableClubWarp(void)
 extern const u8 EventScript_ReturnToHub[];
 static bool8 ReturnToHub(void)
 {
-    PlaySE(SE_SELECT);
-    ScriptContext_SetupScript(EventScript_ReturnToHub);
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(POKE_PUZZLE_HUB))
+    {
+        return FALSE;
+    } else {
+        PlaySE(SE_SELECT);
+        ScriptContext_SetupScript(EventScript_ReturnToHub);
+    }
+    
+    return TRUE;
+}
+
+extern const u8 EventScript_RestartPuzzle[];
+static bool8 RestartPuzzle(void)
+{
+    s8 mapNum = gSaveBlock1Ptr->location.mapNum;
+
+    if (
+        mapNum == MAP_NUM(POKE_PUZZLE_HUB)
+        || mapNum == MAP_NUM(POKE_PUZZLE_EXIT)
+        || mapNum == MAP_NUM(WORLD1_LOBBY)
+        )
+    {
+        return FALSE;
+    } 
+    else 
+    {
+        PlaySE(SE_SELECT);
+        ScriptContext_SetupScript(EventScript_RestartPuzzle);
+    }
     
     return TRUE;
 }

@@ -301,3 +301,17 @@ EventScript_WarpToHub:
 
 Text_ReturnToHub:
 	.string "Return to hub?$"
+
+EventScript_RestartPuzzle::
+	msgbox Text_RestartPuzzle, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, EventScript_WarpToPuzzleStart
+	closemessage
+	end
+
+EventScript_WarpToPuzzleStart:
+	closemessage
+	special RestartPuzzle
+	end
+
+Text_RestartPuzzle:
+	.string "Restart puzzle?$"
