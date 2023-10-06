@@ -287,3 +287,17 @@ EventScript_FailSweetScent::
 
 Text_FailSweetScent:
 	.string "Looks like there's nothing here…$"
+
+EventScript_ReturnToHub::
+	msgbox Text_ReturnToHub, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, EventScript_WarpToHub
+	closemessage
+	end
+
+EventScript_WarpToHub:
+	warpteleport MAP_POKE_PUZZLE_HUB, 11
+	waitstate
+	end
+
+Text_ReturnToHub:
+	.string "Return to hub?$"
