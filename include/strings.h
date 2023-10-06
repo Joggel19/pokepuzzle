@@ -3038,4 +3038,7 @@ extern const u8 gText_TellHimTheWords[];
 extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 
+// PokePuzzle Strings
+extern const u8 gText_Percent[];
+
 #endif // GUARD_STRINGS_H
