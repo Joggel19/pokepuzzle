@@ -1,16 +1,16 @@
 {
-  "id": "MAP_WORLD1_LOBBY",
-  "name": "World1_Lobby",
-  "layout": "LAYOUT_WORLD1_LOBBY",
-  "music": "MUS_BIRCH_LAB",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "id": "MAP_WORLD1_E1",
+  "name": "World1_E1",
+  "layout": "LAYOUT_WORLD1_E1",
+  "music": "MUS_PETALBURG_WOODS",
+  "region_map_section": "MAPSEC_OLDALE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_INDOOR",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
-  "show_map_name": false,
+  "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
@@ -18,11 +18,11 @@
   ],
   "warp_events": [
     {
-      "x": 4,
-      "y": 7,
+      "x": 9,
+      "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_POKE_PUZZLE_HUB",
-      "dest_warp_id": "3"
+      "dest_map": "MAP_WORLD1_E1",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -31,11 +31,11 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 6,
-      "y": 3,
+      "x": 9,
+      "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "World1_Lobby_Sign_LevelSelection"
+      "script": "World1_E1_End"
     }
   ]
 }

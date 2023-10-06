@@ -4450,6 +4450,16 @@
       "secondary_tileset": "gTileset_BattleFactory",
       "border_filepath": "data/layouts/World1_Lobby/border.bin",
       "blockdata_filepath": "data/layouts/World1_Lobby/map.bin"
+    },
+    {
+      "id": "LAYOUT_WORLD1_E1",
+      "name": "World1_E1_Layout",
+      "width": 19,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/World1_E1/border.bin",
+      "blockdata_filepath": "data/layouts/World1_E1/map.bin"
     }
   ]
 }

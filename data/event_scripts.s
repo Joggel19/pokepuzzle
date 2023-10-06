@@ -1067,3 +1067,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/PokePuzzleExit/scripts.inc"
 
 	.include "data/maps/World1_Lobby/scripts.inc"
+
+	.include "data/maps/World1_E1/scripts.inc"

@@ -1,1 +1,158 @@
-mapscripts World1_Lobby_MapScripts {}
+mapscripts World1_Lobby_MapScripts {
+}
+
+script World1_Lobby_Sign_LevelSelection {
+    lock
+    msgbox(World1_Lobby_Text_SelectDifficulty)
+    dynmultipush(World1_Lobby_Text_Easy, 0)
+    dynmultipush(World1_Lobby_Text_Normal, 1)
+    dynmultipush(World1_Lobby_Text_Hard, 2)
+    dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+    switch (var(VAR_RESULT)) {
+		case 0:
+			goto(World1_Lobby_Sign_LevelSelection_Easy)
+		case 1:
+			goto(World1_Lobby_Sign_LevelSelection_Normal)
+		case 2:
+			goto(World1_Lobby_Sign_LevelSelection_Hard)
+		default:
+	}
+    release
+    end
+}
+
+text World1_Lobby_Text_SelectDifficulty {
+    format("Select a difficulty.")
+}
+
+text World1_Lobby_Text_Easy {
+    format("Easy")
+}
+
+text World1_Lobby_Text_Normal {
+    format("Normal")
+}
+
+text World1_Lobby_Text_Hard {
+    format("Hard")
+}
+
+text World1_Lobby_Text_SelectLevel {
+    format("Select a level to play.")
+}
+
+text World1_Lobby_Text_Level1_Cleared {
+    format("{COLOR GREEN}Level 1")
+}
+
+text World1_Lobby_Text_Level1_NotCleared {
+    format("{COLOR RED}Level 1")
+}
+
+text World1_Lobby_Text_Level2_Cleared {
+    format("{COLOR GREEN}Level 2")
+}
+
+text World1_Lobby_Text_Level2_NotCleared {
+    format("{COLOR RED}Level 2")
+}
+
+text World1_Lobby_Text_Level3_Cleared {
+    format("{COLOR GREEN}Level 3")
+}
+
+text World1_Lobby_Text_Level3_NotCleared {
+    format("{COLOR RED}Level 3")
+}
+
+script World1_Lobby_Sign_LevelSelection_Easy {
+    lock
+    msgbox(World1_Lobby_Text_SelectLevel)
+    if (flag(FLAG_CLEARED_W1_E1)) {
+        dynmultipush(World1_Lobby_Text_Level1_Cleared, 0)
+    } else {
+        dynmultipush(World1_Lobby_Text_Level1_NotCleared, 0)
+    }
+    if (flag(FLAG_CLEARED_W1_E2)) {
+        dynmultipush(World1_Lobby_Text_Level2_Cleared, 1)
+    } else {
+        dynmultipush(World1_Lobby_Text_Level2_NotCleared, 1)
+    }
+    if (flag(FLAG_CLEARED_W1_E3)) {
+        dynmultipush(World1_Lobby_Text_Level3_Cleared, 1)
+    } else {
+        dynmultipush(World1_Lobby_Text_Level3_NotCleared, 1)
+    }
+    dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+    switch (var(VAR_RESULT)) {
+		case 0:
+			warpteleport(MAP_WORLD1_E1, 0)
+			waitstate
+		case 1:
+		case 2:
+		default:
+            goto(World1_Lobby_Sign_LevelSelection)
+	}
+    releaseall
+    end
+}
+
+script World1_Lobby_Sign_LevelSelection_Normal {
+    lock
+    msgbox(World1_Lobby_Text_SelectLevel)
+    if (flag(FLAG_CLEARED_W1_N1)) {
+        dynmultipush(World1_Lobby_Text_Level1_Cleared, 0)
+    } else {
+        dynmultipush(World1_Lobby_Text_Level1_NotCleared, 0)
+    }
+    if (flag(FLAG_CLEARED_W1_N2)) {
+        dynmultipush(World1_Lobby_Text_Level2_Cleared, 1)
+    } else {
+        dynmultipush(World1_Lobby_Text_Level2_NotCleared, 1)
+    }
+    if (flag(FLAG_CLEARED_W1_N3)) {
+        dynmultipush(World1_Lobby_Text_Level3_Cleared, 1)
+    } else {
+        dynmultipush(World1_Lobby_Text_Level3_NotCleared, 1)
+    }
+    dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+    switch (var(VAR_RESULT)) {
+		case 0:
+		case 1:
+		case 2:
+		default:
+            goto(World1_Lobby_Sign_LevelSelection)
+	}
+    releaseall
+    end
+}
+
+script World1_Lobby_Sign_LevelSelection_Hard {
+    lock
+    msgbox(World1_Lobby_Text_SelectLevel)
+    if (flag(FLAG_CLEARED_W1_H1)) {
+        dynmultipush(World1_Lobby_Text_Level1_Cleared, 0)
+    } else {
+        dynmultipush(World1_Lobby_Text_Level1_NotCleared, 0)
+    }
+    if (flag(FLAG_CLEARED_W1_H2)) {
+        dynmultipush(World1_Lobby_Text_Level2_Cleared, 1)
+    } else {
+        dynmultipush(World1_Lobby_Text_Level3_NotCleared, 1)
+    }
+    if (flag(FLAG_CLEARED_W1_H3)) {
+        dynmultipush(World1_Lobby_Text_Level3_Cleared, 1)
+    } else {
+        dynmultipush(World1_Lobby_Text_Level3_NotCleared, 1)
+    }
+    dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+    switch (var(VAR_RESULT)) {
+		case 0:
+		case 1:
+		case 2:
+		default:
+            goto(World1_Lobby_Sign_LevelSelection)
+	}
+    releaseall
+    end
+}

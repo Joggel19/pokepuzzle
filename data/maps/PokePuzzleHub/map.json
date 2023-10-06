@@ -2,7 +2,7 @@
   "id": "MAP_POKE_PUZZLE_HUB",
   "name": "PokePuzzleHub",
   "layout": "LAYOUT_POKE_PUZZLE_HUB",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_BIRCH_LAB",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -43,6 +43,62 @@
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_WORLD1_LOBBY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_POKE_PUZZLE_HUB",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_POKE_PUZZLE_HUB",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 22,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_POKE_PUZZLE_HUB",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_POKE_PUZZLE_HUB",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 34,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_POKE_PUZZLE_HUB",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 40,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_POKE_PUZZLE_HUB",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 46,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_POKE_PUZZLE_HUB",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_POKE_PUZZLE_HUB",
       "dest_warp_id": "0"
     }
   ],

@@ -1,0 +1,36 @@
+mapscripts World1_E1_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: World1_E1_OnTransition
+}
+
+script World1_E1_OnTransition {
+    setflashlevel(4)
+	end
+}
+
+script World1_E1_End {
+    lock
+    setflag(FLAG_CLEARED_W1_E1)
+    msgbox(World1_E1_Text_End)
+    dynmultipush("Next Level", 0)
+    dynmultipush("Select W1 Level", 1)
+    dynmultipush("Hub", 2)
+    dynmultistack(0, 0, TRUE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+    switch (var(VAR_RESULT)) {
+		case 0:
+		case 1:
+			goto(World1_Lobby_Sign_LevelSelection)
+		case 2:
+			warpteleport(MAP_POKE_PUZZLE_HUB, 11)
+			waitstate
+		default:
+	}
+    releaseall
+    end
+}
+
+text World1_E1_Text_End {
+    format(
+        "You beat W1-E1!\n"
+        "Where do you wish to go next?"
+        )
+}

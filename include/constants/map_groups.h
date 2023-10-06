@@ -10,6 +10,7 @@
 #define MAP_WORLD_1_1        (1 | (0 << 8))
 #define MAP_POKE_PUZZLE_EXIT (2 | (0 << 8))
 #define MAP_WORLD1_LOBBY     (3 | (0 << 8))
+#define MAP_WORLD1_E1        (4 | (0 << 8))
 
 // gMapGroup_TownsAndRoutes
 #define MAP_PETALBURG_CITY      (0 | (1 << 8))

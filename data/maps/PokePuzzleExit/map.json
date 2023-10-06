@@ -2,7 +2,7 @@
   "id": "MAP_POKE_PUZZLE_EXIT",
   "name": "PokePuzzleExit",
   "layout": "LAYOUT_POKE_PUZZLE_EXIT",
-  "music": "MUS_ABANDONED_SHIP",
+  "music": "MUS_BIRCH_LAB",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

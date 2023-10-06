@@ -40,7 +40,8 @@
     "PokePuzzleHub",
     "World_1_1",
     "PokePuzzleExit",
-    "World1_Lobby"
+    "World1_Lobby",
+    "World1_E1"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
