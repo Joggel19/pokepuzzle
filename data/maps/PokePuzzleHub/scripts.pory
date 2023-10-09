@@ -1,2 +1,181 @@
 mapscripts PokePuzzleHub_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_PUZZLE_HUB_STATE, 0: PokePuzzleHub_OnFrame_BirchIntro
+    ]
+}
+
+const PLAYER_ID = 0
+const BIRCH_ID = 1
+script PokePuzzleHub_OnFrame_BirchIntro {
+    lockall
+    setvar(VAR_PUZZLE_HUB_STATE, 1)
+    applymovement(OBJ_EVENT_ID_PLAYER, PokePuzzleHub_Movement_Player_FaceUp)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    applymovement(BIRCH_ID, PokePuzzleHub_Movement_Birch_NoticePlayer)
+    playse(SE_PIN)
+    waitmovement(BIRCH_ID)
+    applymovement(OBJ_EVENT_ID_PLAYER, PokePuzzleHub_Movement_Player_WalkToBirch)
+    waitmovement(OBJ_EVENT_ID_PLAYER)
+    msgbox(PokePuzzleHub_Text_Birch_Greetings)
+    waitmessage
+    closemessage
+    applymovement(BIRCH_ID, PokePuzzleHub_Movement_Birch_Forgot)
+    playse(SE_PIN)
+    msgbox(PokePuzzleHub_Text_Birch_DeviceOne)
+    playfanfare(MUS_OBTAIN_ITEM)
+	message(PokePuzzleHub_Text_Birch_ObtainedDeviceOne)
+	waitfanfare
+    msgbox(PokePuzzleHub_Text_Birch_DeviceTwo)
+    playfanfare(MUS_OBTAIN_ITEM)
+	message(PokePuzzleHub_Text_Birch_ObtainedDeviceTwo)
+	waitfanfare
+    msgbox(PokePuzzleHub_Text_Birch_SwingBy)
+    waitmessage
+    applymovement(BIRCH_ID, Common_Movement_FaceOriginalDirection)
+    waitmovement(BIRCH_ID)
+    releaseall
+    end
+}
+
+movement PokePuzzleHub_Movement_Player_FaceUp {
+    face_up
+}
+
+movement PokePuzzleHub_Movement_Birch_NoticePlayer {
+    face_player
+	emote_exclamation_mark
+}
+
+movement PokePuzzleHub_Movement_Player_WalkToBirch {
+    walk_up
+}
+
+text PokePuzzleHub_Text_Birch_Greetings {
+    format(
+        "BIRCH: Ah, good! You're here!\n"
+        "So, yeah, this is the Puzzle Lab. Not particularly crouded, as you can see.\p"
+        "But it's a new project after all, so there'll be more traffic as we get first results.\p"
+        "We originally divided the types of objects for Mew into eight categories which now translates to eight types of puzzles.\p"
+        "That's what the numbers above the green doors represent.\p"
+        "You can start with any puzzle you like, just enter through the doors and read the signs in the room.\p"
+        "Happy solving!"
+        )
+}
+
+movement PokePuzzleHub_Movement_Birch_Forgot {
+	jump_in_place_down
+    emote_exclamation_mark
+}
+
+text PokePuzzleHub_Text_Birch_DeviceOne {
+    format(
+        "BIRCH: Oh, nearly forgot!\p"
+        "You'll want to have these two devices for your work here.\p"
+        "The first one teleports you right back here - to the Puzzle Hub.\p"
+        "Just press {L_BUTTON} to use it."
+        )
+}
+
+text PokePuzzleHub_Text_Birch_ObtainedDeviceOne {
+    format(
+        "{PLAYER} obtained the {COLOR RED}Hub Teleporter{COLOR DARK_GRAY}!"
+        )
+}
+
+text PokePuzzleHub_Text_Birch_DeviceTwo {
+    format(
+        "BIRCH: The second device lets you restart the puzzle you are currently solving.\p"
+        "Press {R_BUTTON} to use it."
+        )
+}
+
+text PokePuzzleHub_Text_Birch_ObtainedDeviceTwo {
+    format(
+        "{PLAYER} obtained the {COLOR RED}Puzzle Restarter{COLOR DARK_GRAY}!"
+        )
+}
+
+text PokePuzzleHub_Text_Birch_SwingBy {
+    format(
+        "BIRCH: If you have any more questions, just swing by. I'll be here in the hub."
+        )
+}
+
+script PokePuzzleHub_EventScript_Birch {
+    lockall
+    faceplayer
+    msgbox(PokePuzzleHub_Text_Birch_WhatsUp)
+    dynmultipush(PokePuzzleHub_Text_Birch_Devices, 0)
+    dynmultipush(PokePuzzleHub_Text_Birch_Job, 1)
+    dynmultipush(PokePuzzleHub_Text_Birch_Stuck, 2)
+    dynmultipush(PokePuzzleHub_Text_Birch_NeverMind, 3)
+    dynmultistack(0, 0, FALSE, 6, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+    switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox(PokePuzzleHub_Text_Birch_ExplainDevices)
+            waitmessage
+		case 1:
+			msgbox(PokePuzzleHub_Text_Birch_ExplainJob)
+            waitmessage
+		case 2:
+			msgbox(PokePuzzleHub_Text_Birch_ExplainStuck)
+            waitmessage
+		case 3:
+        default:
+	}
+    applymovement(BIRCH_ID, Common_Movement_FaceOriginalDirection)
+    waitmovement(BIRCH_ID)
+    releaseall
+    end
+}
+
+text PokePuzzleHub_Text_Birch_WhatsUp {
+    format(
+        "Oh, hey {PLAYER}. What's up?"
+        )
+}
+
+text PokePuzzleHub_Text_Birch_Devices {
+    format(
+        "Device buttons?"
+        )
+}
+
+text PokePuzzleHub_Text_Birch_ExplainDevices {
+    format(
+        "The Hub Teleporter teleports you right back here - to the Puzzle Hub.\p"
+        "Just press {L_BUTTON} to use it.\p"
+        "The Puzzle Restarter lets you restart the puzzle you are currently solving.\p"
+        "Press {R_BUTTON} to use it."
+        )
+}
+
+text PokePuzzleHub_Text_Birch_Job {
+    format(
+        "What's my job again?"
+        )
+}
+
+text PokePuzzleHub_Text_Birch_ExplainJob {
+    format(
+        "Solve puzzles. That simple."
+        )
+}
+
+text PokePuzzleHub_Text_Birch_Stuck {
+    format(
+        "The puzzles are too hard for me."
+        )
+}
+
+text PokePuzzleHub_Text_Birch_ExplainStuck {
+    format(
+        "You can always take a break if you're tired."
+        )
+}
+
+text PokePuzzleHub_Text_Birch_NeverMind {
+    format(
+        "Never mind."
+        )
 }

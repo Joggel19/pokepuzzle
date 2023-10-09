@@ -113,7 +113,7 @@ World1_Lobby_Sign_LevelSelection_Hard::
 	dynmultipush World1_Lobby_Text_Level1_NotCleared, 0
 World1_Lobby_Sign_LevelSelection_Hard_1:
 	goto_if_set FLAG_CLEARED_W1_H2, World1_Lobby_Sign_LevelSelection_Hard_6
-	dynmultipush World1_Lobby_Text_Level3_NotCleared, 1
+	dynmultipush World1_Lobby_Text_Level2_NotCleared, 1
 World1_Lobby_Sign_LevelSelection_Hard_5:
 	goto_if_set FLAG_CLEARED_W1_H3, World1_Lobby_Sign_LevelSelection_Hard_10
 	dynmultipush World1_Lobby_Text_Level3_NotCleared, 1
@@ -142,7 +142,7 @@ World1_Lobby_Sign_LevelSelection_Hard_10:
 
 
 World1_Lobby_Text_SelectDifficulty::
-	.string "Select a difficulty.$"
+	.string "Select a puzzle difficulty.$"
 
 World1_Lobby_Text_Easy::
 	.string "Easy$"

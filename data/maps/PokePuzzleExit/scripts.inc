@@ -10,10 +10,10 @@ PokePuzzleExit_EventScript_Attendant::
 	end
 
 
-PokePuzzleExit_EventScript_Brawly::
+PokePuzzleExit_EventScript_Scientist::
 	lockall
 	faceplayer
-	msgbox PokePuzzleExit_Text_Brawly
+	msgbox PokePuzzleExit_Text_Scientist
 	waitmessage
 	applymovement 2, Common_Movement_FaceOriginalDirection
 	waitmovement 2
@@ -25,13 +25,14 @@ PokePuzzleExit_Text_Attendant::
 	.string "Welcome to the Puzzle Lab!\n"
 	.string "You can find the Puzzle Hub to your\l"
 	.string "right and the building exit to your\l"
-	.string "left.\p"
-	.string "Please enjoy your stay!$"
+	.string "left.$"
 
-PokePuzzleExit_Text_Brawly::
-	.string "BRAWLY: Me? No, I can leave anytime I\n"
-	.string "want.\p"
-	.string "I just prefer to stay here, absolutely\n"
-	.string "voluntary.\p"
-	.string "Would be kind of weird if they didn't let\n"
-	.string "you leave, right?$"
+PokePuzzleExit_Text_Scientist::
+	.string "What? You can't leave the building?\n"
+	.string "Hmm. That must be Mew be messing with\l"
+	.string "you.\p"
+	.string "I'm sure Mew will let you leave at some\n"
+	.string "point.\p"
+	.string "I suggest you just solve some more\n"
+	.string "puzzles for the time being.\p"
+	.string "Can't hurt.$"

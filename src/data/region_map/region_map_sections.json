@@ -2,7 +2,7 @@
   "map_sections": [
     {
       "map_section": "MAPSEC_LITTLEROOT_TOWN",
-      "name": "Puzzle Lab",
+      "name": "PUZZLE LAB",
       "x": 4,
       "y": 11,
       "width": 1,
@@ -10,7 +10,7 @@
     },
     {
       "map_section": "MAPSEC_OLDALE_TOWN",
-      "name": "Wild Woods",
+      "name": "WILD WOODS",
       "x": 4,
       "y": 9,
       "width": 1,

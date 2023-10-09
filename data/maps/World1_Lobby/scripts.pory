@@ -22,7 +22,7 @@ script World1_Lobby_Sign_LevelSelection {
 }
 
 text World1_Lobby_Text_SelectDifficulty {
-    format("Select a difficulty.")
+    format("Select a puzzle difficulty.")
 }
 
 text World1_Lobby_Text_Easy {
@@ -138,7 +138,7 @@ script World1_Lobby_Sign_LevelSelection_Hard {
     if (flag(FLAG_CLEARED_W1_H2)) {
         dynmultipush(World1_Lobby_Text_Level2_Cleared, 1)
     } else {
-        dynmultipush(World1_Lobby_Text_Level3_NotCleared, 1)
+        dynmultipush(World1_Lobby_Text_Level2_NotCleared, 1)
     }
     if (flag(FLAG_CLEARED_W1_H3)) {
         dynmultipush(World1_Lobby_Text_Level3_Cleared, 1)

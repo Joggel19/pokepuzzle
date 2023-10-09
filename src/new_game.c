@@ -126,7 +126,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(POKE_PUZZLE_HUB), MAP_NUM(POKE_PUZZLE_HUB), WARP_ID_NONE, -1, -1);
+    SetWarpDestination(MAP_GROUP(POKE_PUZZLE_HUB), MAP_NUM(POKE_PUZZLE_HUB), 11, -1, -1);
     WarpIntoMap();
 }
 

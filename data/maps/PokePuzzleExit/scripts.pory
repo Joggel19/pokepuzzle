@@ -11,27 +11,28 @@ script PokePuzzleExit_EventScript_Attendant {
 text PokePuzzleExit_Text_Attendant {
     format(
         "Welcome to the Puzzle Lab!\n"
-        "You can find the Puzzle Hub to your right and the building exit to your left.\p"
-        "Please enjoy your stay!"
+        "You can find the Puzzle Hub to your right and the building exit to your left."
         )
 }
 
-const BRAWLY_ID = 2
-script PokePuzzleExit_EventScript_Brawly {
+const SCIENTIST_ID = 2
+script PokePuzzleExit_EventScript_Scientist {
     lockall
     faceplayer
-    msgbox(PokePuzzleExit_Text_Brawly)
+    msgbox(PokePuzzleExit_Text_Scientist)
     waitmessage
-    applymovement(BRAWLY_ID, Common_Movement_FaceOriginalDirection)
-    waitmovement(BRAWLY_ID)
+    applymovement(SCIENTIST_ID, Common_Movement_FaceOriginalDirection)
+    waitmovement(SCIENTIST_ID)
     release
     end
 }
 
-text PokePuzzleExit_Text_Brawly {
+text PokePuzzleExit_Text_Scientist {
     format(
-        "BRAWLY: Me? No, I can leave anytime I want.\p"
-        "I just prefer to stay here, absolutely voluntary.\p"
-        "Would be kind of weird if they didn't let you leave, right?"
+        "What? You can't leave the building?\n"
+        "Hmm. That must be Mew be messing with you.\p"
+        "I'm sure Mew will let you leave at some point.\p"
+        "I suggest you just solve some more puzzles for the time being.\p"
+        "Can't hurt."
         )
 }
