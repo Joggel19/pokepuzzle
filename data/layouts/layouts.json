@@ -4424,8 +4424,8 @@
     {
       "id": "LAYOUT_WORLD_1_1",
       "name": "World_1_1_Layout",
-      "width": 19,
-      "height": 21,
+      "width": 21,
+      "height": 29,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/World_1_1/border.bin",

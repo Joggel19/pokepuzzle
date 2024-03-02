@@ -19,14 +19,14 @@
   "warp_events": [
     {
       "x": 9,
-      "y": 19,
+      "y": 25,
       "elevation": 0,
       "dest_map": "MAP_POKE_PUZZLE_HUB",
       "dest_warp_id": "0"
     },
     {
-      "x": 9,
-      "y": 1,
+      "x": 10,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_WORLD1_LOBBY",
       "dest_warp_id": "0"
