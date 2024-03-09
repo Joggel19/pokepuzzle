@@ -240,7 +240,7 @@ static void Task_NewGameBirchSpeech_Cleanup(u8);
 static void SpriteCB_Null();
 static void Task_NewGameBirchSpeech_ReturnFromNamingScreenShowTextbox(u8);
 static void MainMenu_FormatSavegamePlayer(void);
-static void MainMenu_FormatSavegamePokedex(void);
+static void MainMenu_FormatSavegameCompletion(void);
 static void MainMenu_FormatSavegameTime(void);
 static void MainMenu_FormatSavegameBadges(void);
 static void NewGameBirchSpeech_CreateDialogueWindowBorder(u8, u8, u8, u8, u8, u8);
@@ -2131,7 +2131,7 @@ static void CreateMainMenuErrorWindow(const u8 *str)
 static void MainMenu_FormatSavegameText(void)
 {
     MainMenu_FormatSavegamePlayer();
-    MainMenu_FormatSavegamePokedex();
+    MainMenu_FormatSavegameCompletion();
     MainMenu_FormatSavegameTime();
     MainMenu_FormatSavegameBadges();
 }
@@ -2156,15 +2156,15 @@ static void MainMenu_FormatSavegameTime(void)
     AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 0xD0), 17, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
 }
 
-static void MainMenu_FormatSavegamePokedex(void)
+static void MainMenu_FormatSavegameCompletion(void)
 {
     u8 str[0x21];
-    u16 dexCount;
+    u16 completion;
 
-    dexCount = GetPuzzleCompletionPercentage();
-    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuPokedex);
+    completion = GetPuzzleCompletionPercentage();
+    StringExpandPlaceholders(gStringVar4, gText_ContinueMenuCompletion);
     AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
-    ConvertIntToDecimalStringN(str, dexCount, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(str, completion, STR_CONV_MODE_LEFT_ALIGN, 3);
     StringAppend(str, gText_Percent);
     AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 100), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
 }

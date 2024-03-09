@@ -1393,10 +1393,10 @@ static void ShowSaveInfoWindow(void)
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
 
-    // Print pokedex count
+    // Print completion
     yOffset += 16;
-    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    BufferSaveMenuText(SAVE_MENU_CAUGHT, gStringVar4, color);
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingCompletion, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+    BufferSaveMenuText(SAVE_MENU_COMPLETION, gStringVar4, color);
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
 

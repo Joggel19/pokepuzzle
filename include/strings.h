@@ -285,7 +285,7 @@ extern const u8 gText_SaveError[];
 extern const u8 gText_SavingDontTurnOffPower[];
 extern const u8 gText_SavingPlayer[];
 extern const u8 gText_SavingBadges[];
-extern const u8 gText_SavingPokedex[];
+extern const u8 gText_SavingCompletion[];
 extern const u8 gText_SavingTime[];
 
 // Battle pyramid menu texts
@@ -348,7 +348,7 @@ extern const u8 gText_Birch_YourePlayer[];
 extern const u8 gText_Birch_AreYouReady[];
 extern const u8 gText_ContinueMenuPlayer[];
 extern const u8 gText_ContinueMenuTime[];
-extern const u8 gText_ContinueMenuPokedex[];
+extern const u8 gText_ContinueMenuCompletion[];
 extern const u8 gText_ContinueMenuBadges[];
 extern const u8 gText_BirchBoy[];
 extern const u8 gText_BirchGirl[];
@@ -2539,7 +2539,7 @@ extern const u8 gText_TrainerCardIDNo[];
 extern const u8 gText_TrainerCardMoney[];
 extern const u8 gText_PokedollarVar1[];
 extern const u8 gText_EmptyString6[];
-extern const u8 gText_TrainerCardPokedex[];
+extern const u8 gText_TrainerCardCompletion[];
 extern const u8 gText_TrainerCardTime[];
 extern const u8 gText_Colon2[];
 extern const u8 gText_Var1sTrainerCard[];
